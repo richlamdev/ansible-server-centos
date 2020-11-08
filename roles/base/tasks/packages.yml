@@ -1,0 +1,65 @@
+--- # Install all the standard packages:
+- name: packages - dnf upgrade all *MAY TAKE A LONG TIME*
+  dnf:
+    name: "*"
+    state: latest
+
+# keep alphabetically ordered
+- name: packages - install our standard additions to the base install
+  dnf:
+    state: latest
+    name:
+      #- build-essential
+      - curl
+      #- cifs-utils
+      #- gcc
+      - git
+      #- golang
+      #- htop
+      #- iftop
+      - jq
+      #- make
+      - nmap
+      #- p7zip
+      - python3-pip
+      #- ranger
+      #- sysstat
+      - tcpdump
+      - tmux
+      - tree
+      #- unrar
+      #- unzip
+      - vim
+      #- whois
+#
+- name: packages - dnf autoremove 
+  dnf:
+    autoremove: yes
+#
+## pip - install pip3 packages
+#- name: packages - install our additional pip packages
+  #pip:
+    #state: latest
+    #executable: pip3
+    #name:
+      #- pip # self upgrade pip first
+      #- glances
+      #- bottle
+#
+#- name: packages - clone ssh-default-banners from repository
+  #git:
+    #repo: "https://github.com/richlamdev/ssh-default-banners.git"
+    #dest: "/opt/ssh-default-banners/"
+    #update: yes 
+#
+#- name: packages - clone misc from repository
+  #git:
+    #repo: "https://github.com/richlamdev/misc.git"
+    #dest: "/opt/misc/"
+    #update: yes 
+#
+#- name: packages - clone ansible-random from repository
+  #git:
+    #repo: "https://github.com/richlamdev/ansible-random.git"
+    #dest: "/opt/ansible-random/"
+    #update: yes 

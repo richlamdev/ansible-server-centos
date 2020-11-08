@@ -1,0 +1,18 @@
+---
+# install various packages 
+- include: packages.yml
+
+# time setting
+#- include: system.yml
+
+# authentication
+#- include: authentication.yml
+
+#- include: security.yml
+
+# optimize - remove unnecessary services
+
+#- include: optimize.yml
+
+# disable motd-news
+#- include: motd-news.yml

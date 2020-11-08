@@ -1,0 +1,13 @@
+---
+- name: Playbook desktop start
+  hosts: all
+  #user:
+  become: True
+  become_user: root
+  become_method: sudo
+  gather_facts: False
+  #tasks:
+  #- include_tasks: tasks/main.yml
+  
+  roles:
+    - role: base
