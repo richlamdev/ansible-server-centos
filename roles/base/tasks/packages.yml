@@ -24,6 +24,7 @@
       - python3-pip
       #- ranger
       #- sysstat
+      - policycoreutils-python-utils
       - tcpdump
       - tmux
       - tree

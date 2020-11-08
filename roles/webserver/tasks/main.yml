@@ -1,0 +1,7 @@
+- name: webserver - install apache2 webserver with python3-mod_wsgi
+  dnf:
+    state: latest
+    name:
+      - httpd
+      - httpd-devel
+      - python3-mod_wsgi
