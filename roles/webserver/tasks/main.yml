@@ -5,3 +5,25 @@
       - httpd
       - httpd-devel
       - python3-mod_wsgi
+
+- name: webserver - allow http via firewalld, enable immediately
+  firewalld:
+    zone: public
+    service: http
+    permanent: True
+    state: enabled 
+    immediate: True
+
+- name: webserver - Allow Apache to listen on tcp port 80
+  seport:
+    ports: 80
+    proto: tcp
+    setype: http_port_t
+    state: present
+
+#- name: webserver - Allow Apache to listen on tcp port 443
+  #seport:
+    #ports: 443
+    #proto: tcp
+    #setype: http_port_t
+    #state: present
