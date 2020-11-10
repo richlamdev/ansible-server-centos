@@ -14,16 +14,7 @@
     state: enabled 
     immediate: True
 
-- name: webserver - Allow Apache to listen on tcp port 80
-  seport:
-    ports: 80
-    proto: tcp
-    setype: http_port_t
-    state: present
-
-#- name: webserver - Allow Apache to listen on tcp port 443
-  #seport:
-    #ports: 443
-    #proto: tcp
-    #setype: http_port_t
-    #state: present
+- name: webserver - start apache2 webserver
+  systemd:
+    state: started
+    name: httpd
